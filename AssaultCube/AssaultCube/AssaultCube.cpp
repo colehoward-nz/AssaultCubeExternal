@@ -58,7 +58,7 @@ int main()
             bAmmo = !bAmmo;
             if (bAmmo)
             {
-                mem::PatchEx((BYTE*)(moduleBaseAddress + 0xC73EF), (BYTE*)"\x40\x90", 2, hProcess);
+                mem::PatchEx((BYTE*)(moduleBaseAddress + 0xC73EF), (BYTE*)"\x90\x40", 2, hProcess);
                 SetConsoleTextAttribute(hConsole, 2);
                 std::cout << "[toggle] increasing ammo: " << "ENABLED\n";
             }
