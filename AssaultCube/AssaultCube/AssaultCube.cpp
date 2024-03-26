@@ -21,8 +21,8 @@ int main()
     {
         hProcess = OpenProcess(PROCESS_ALL_ACCESS, NULL, processID);
         moduleBaseAddress = GetModuleBaseAddress(processID, L"ac_client.exe");
-        localPlayerPointer = moduleBaseAddress + 0x17E0A8;
-        healthAddress = FindDMAAddy(hProcess, localPlayerPointer, { 0xEC });
+        localPlayerPointer = moduleBaseAddress + 0x0017F110;
+        healthAddress = FindDMAAddy(hProcess, localPlayerPointer, { 0x0, 0xEC });
         ammoAddress = FindDMAAddy(hProcess, localPlayerPointer, { 0x364, 0x14, 0x0 });
     }
     else
